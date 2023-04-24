@@ -36,10 +36,10 @@ const MemoryForm = () => {
 
 
     try {
-      const response = await axios.post('http://localhost:5000/api/data', formData);
+      const response = await axios.post('http://localhost:5000/api/data/', formData);
       console.log(response.data);
       alert('Your application has been submitted successfully');
-      navigate('/');
+   
     } catch (error) {
       console.error(error);
       alert(error.response.data.message);
