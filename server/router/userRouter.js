@@ -18,6 +18,7 @@ router.post('/register', asyncHandler(async (req, res) => {
 }));
 
 router.post('/login', asyncHandler(async (req, res) => {
+
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
@@ -28,12 +29,16 @@ router.post('/login', asyncHandler(async (req, res) => {
         if (!isMatch) {
             return res.status(401).json({ message: 'Authentication failed' });
         }
-        const token = jwt.sign({ email: user.email, userId: user._id }, process.env.JWT_SECRET, { expiresIn: '5h' });
+        const token = jwt.sign({ email: user.email, userId: user._id }, 'SECRET', { expiresIn: '5h' });
+
         res.status(200).json({ token });
-    } catch (err) {
-        res.status(500).json({ message: 'Failed to login', error: err });
     }
+    catch (err) {
+        console.log(err);
+    }
+
 }));
+
 
 router.get('/', asyncHandler(async (req, res) => {
     try {

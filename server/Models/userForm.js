@@ -7,7 +7,10 @@ const dataSchema = new Schema({
     title: { type: String, required: true },
     message: { type: String, required: true },
     tags: [{ type: String }],
-    file: { type: String }
+    file: { 
+        data: Buffer, 
+        contentType: String 
+    }
 });
 
 module.exports = mongoose.model('Data', dataSchema);

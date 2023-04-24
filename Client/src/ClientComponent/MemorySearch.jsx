@@ -10,14 +10,17 @@ const MemorySearch = () => {
         <input type="text" className=' mb-8 py-2 w-full px-4 mt-5 md:w-2/4 rounded-md border-1 border-blue-700' placeholder='Search....' />
       </div>
       <div className='flex flex-wrap'>
-        <div className='flex-[2] my-4'> 
-        <MemoryList />
-      
+        <div className='flex-[2] my-4'>
+          <MemoryList />
+
         </div>
-        <div className='flex-1'> <MemoryForm/></div>
+        <div className='flex-1 hidden md:flex'>
+          <MemoryForm />
+
+        </div>
       </div>
-     
-     
+
+
     </div>
   )
 }

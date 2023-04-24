@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+
+import Navbar from '../component/Navbar';
 
 const MemoryForm = () => {
   const [placeholder, setPlaceholder] = useState('');
@@ -9,8 +10,6 @@ const MemoryForm = () => {
   const [tags, settags] = useState('');
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
-
-  const navigate = useNavigate();
 
   const validateForm = () => {
     const errors = {};
@@ -47,6 +46,9 @@ const MemoryForm = () => {
   };
   return (
     <div>
+      <div className='md:hidden'>
+        <Navbar/>
+      </div>
       <form className='bg-white px-4 sm:px-8 py-8 my-8' onSubmit={handleSubmit}>
         <h1 className="text-black text-xl font-medium">Create a Memorizer</h1>
 

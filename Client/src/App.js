@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './ClientComponent/login'
 import Register from './ClientComponent/Register'
 import Dashboard from './ClientComponent/Dashboard'
+import MemoryForm from './ClientComponent/MemoryForm'
 const App = () => {
 
   return (
@@ -14,9 +15,17 @@ const App = () => {
           <Route path='/' element={<Hero />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          
         </Routes>
       </BrowserRouter>
+      <div className='md:hidden'>
+        <BrowserRouter>
+          <Routes>
+          <Route path='/post' element={<MemoryForm />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   )
 }

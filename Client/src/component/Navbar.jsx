@@ -8,9 +8,9 @@ import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
   const [login, setlogin] = useState(false);
   const [show, setShow] = useState(false);
-  const history=useNavigate();
+  const history = useNavigate();
 
-  function clrauth(){
+  function clrauth() {
     localStorage.clear();
     history('/');
   }
@@ -59,16 +59,17 @@ const Navbar = () => {
                     d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
                   ></path>
                 </svg>
-                <p className="block font-sans text-sm font-normal leading-normal text-inherit antialiased">
-                  <Link to="/dashboard">
-                  My Profile
-                  </Link>
-                </p>
+
+                <Link to="/dashboard">
+                  <p className="block font-sans text-sm font-normal leading-normal text-inherit antialiased">
+                    My Profile  </p>
+                </Link>
+
               </button>
               <button
                 tabIndex="-1"
                 role="menuitem"
-                className="flex w-full cursor-pointer select-none items-center gap-2 rounded-md px-3 pt-[9px] pb-2 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+                className="flex md:hidden w-full cursor-pointer select-none items-center gap-2 rounded-md px-3 pt-[9px] pb-2 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,9 +91,11 @@ const Navbar = () => {
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   ></path>
                 </svg>
+                  <Link to='/post'>
                 <p className="block font-sans text-sm font-normal leading-normal text-inherit antialiased">
-                  Edit Profile
+                    Create Post
                 </p>
+                  </Link>
               </button>
               <hr className="my-2 border-blue-gray-50" tabIndex="-1" role="menuitem" />
               <button
