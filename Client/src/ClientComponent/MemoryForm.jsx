@@ -41,7 +41,7 @@ const MemoryForm = () => {
    
     } catch (error) {
       console.error(error);
-      alert(error.response.data.message);
+      alert(error.response);
     }
   };
   return (
@@ -49,7 +49,7 @@ const MemoryForm = () => {
       <div className='md:hidden'>
         <Navbar/>
       </div>
-      <form className='bg-white px-4 sm:px-8 py-8 my-8' onSubmit={handleSubmit}>
+      <form className='bg-white px-4 sm:px-8 py-8 my-8'  onSubmit={handleSubmit} encType="multipart/form-data">
         <h1 className="text-black text-xl font-medium">Create a Memorizer</h1>
 
         <div className="relative my-2 h-14 w-full min-w-[200px]">
