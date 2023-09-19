@@ -72,9 +72,9 @@ const MemoryForm = () => {
         </div>
         <div className="relative my-2  w-full min-w-[200px]">
           <textarea rows="5"
-            className="w-full border-2 p-2"
+            className="peer border-2  h-full w-full   border-blue-gray-400   px-3 py-3 font-sans text-sm font-normal text-blue-gray-700  transition-all text-black  focus:border-2   focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             placeholder="Message "
-            name='message'
+            name='Message'
             onChange={(e) => setMessage(e.target.value)}
 
           ></textarea>

@@ -5,7 +5,7 @@ const MemoryList = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
+    axios 
       .get('http://localhost:5000/api/data/adminuser')
       .then((response) => {
         setUsers(response.data);
@@ -16,31 +16,31 @@ const MemoryList = () => {
       });
   }, []);
 
-  const handleDownload = (filename) => {
-    axios
-      .get(`http://localhost:5000/api/data/download/file_1688410912512.png`, {
-        responseType: 'blob',
-      })
-      .then((response) => {
-        // Create a blob URL for the file
-        const url = window.URL.createObjectURL(new Blob([response.data]));
+  // const handleDownload = (filename) => {
+  //   axios
+  //     .get(`http://localhost:5000/api/data/download/file_1688410912512.png`, {
+  //       responseType: 'blob',
+  //     })
+  //     .then((response) => {
+  //       // Create a blob URL for the file
+  //       const url = window.URL.createObjectURL(new Blob([response.data]));
 
-        // Create a temporary link element
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', filename);
+  //       // Create a temporary link element
+  //       const link = document.createElement('a');
+  //       link.href = url;
+  //       link.setAttribute('download', filename);
 
-        // Simulate a click to trigger the download
-        document.body.appendChild(link);
-        link.click();
+  //       // Simulate a click to trigger the download
+  //       document.body.appendChild(link);
+  //       link.click();
 
-        // Clean up the temporary link element
-        document.body.removeChild(link);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  //       // Clean up the temporary link element
+  //       document.body.removeChild(link);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // };
 
   return (
     <div className='flex justify-center py-4 flex-wrap md:gap-4'>
@@ -65,13 +65,13 @@ const MemoryList = () => {
               <h4 className='font-medium'>{user.title}</h4>
             </a>
             <p className='opcacity-60 mb-3'>{user.message}</p>
-            <button
+            {/* <button
               className='middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
               data-ripple-light='true'
               onClick={() => handleDownload(user.file)}
             >
               Download
-            </button>
+            </button> */}
           </div>
         </div>
       ))}

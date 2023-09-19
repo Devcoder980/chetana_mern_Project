@@ -12,7 +12,7 @@ const App = () => {
     <div className=' bg-blue-600 text-white'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Hero />} />
+          <Route path='/' element={<Dashboard />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/dashboard' element={<Dashboard />} />
